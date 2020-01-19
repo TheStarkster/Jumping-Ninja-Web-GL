@@ -12,14 +12,16 @@
       var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Mayyat Nikal Gyi.json", {onProgress: UnityProgress});
     </script>
   </head>
-  <body>
+  <body onload="unityContainerHeightChange()">
     <div class="webgl-content">
-      <div id="unityContainer" style="width: 960px; height: 600px"></div>
-      <div class="footer">
-        <div class="webgl-logo"></div>
-        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
-        <div class="title">JumpingNinja</div>
-      </div>
+      <div id="unityContainer"></div>
     </div>
   </body>
+  <script>
+    // window.onload = 
+    function unityContainerHeightChange(){
+      var UnityContainer = document.getElementById('unityContainer');
+      UnityContainer.setAttribute("style","height:"+ window.innerHeight +"px;width:"+ window.innerWidth +"px");
+    }
+  </script>
 </html>
